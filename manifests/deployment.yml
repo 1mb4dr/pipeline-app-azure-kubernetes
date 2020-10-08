@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: biobadrpipelineappwithazurekubernetes 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: biobadrpipelineappwithazurekubernetes
+  template:
+    metadata:
+      labels:
+        app: biobadrpipelineappwithazurekubernetes 
+    spec:
+      containers:
+        - name: biobadrpipelineappwithazurekubernetes 
+          image: uniqueacrnamebadr.azurecr.io/biobadrpipelineappwithazurekubernetes
+          ports:
+          - containerPort: 5000
