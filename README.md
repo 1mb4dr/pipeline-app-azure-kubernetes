@@ -1,7 +1,6 @@
 # python-app-with-azure-kubernetes
-A demo python application used in blog Application Deployment on Azure Kubernetes Services.
 
-This repo is used in the Medium blog Application Deployment with Azure Kubernetes Service and Azure Pipelines
+This repo is used to Trace an Application Deployed with Azure Kubernetes Service and Azure Pipelines
 
 ### Steps
 
