@@ -1,18 +1,18 @@
 # python-app-with-azure-kubernetes
 A demo python application used in blog Application Deployment on Azure Kubernetes Services.
 
-This repo is used in the Medium blog [Application Deployment with Azure Kubernetes Service and Azure Pipelines](https://medium.com/faun/application-deployment-with-azure-kubernetes-service-and-azure-pipelines-a0bf43916746)
+This repo is used in the Medium blog Application Deployment with Azure Kubernetes Service and Azure Pipelines
 
 ### Steps
 
 **Create a resource group in Azure Subscription**<br>
-`az group create -l southcentralus -n cloudorbit-resource-grp --subscription pay-as-you-go`
+`az group create -l southcentralus -n aks-rg `
 
 **Create Azure k8s cluster**<br>
-`az aks create -g cloudorbit-resource-grp -n cloudobrit-cluster --node-vm-size Standard_B2s --node-count 2 --generate-ssh-keys`
+`az aks create -g aks-rg -n myAKSCluster --node-vm-size Standard_B2s --node-count 1 --generate-ssh-keys`
 
 **Create Azure Container Registry**<br>
-`az acr create -g cloudorbit-resource-grp -n cloudorbit --sku Standard`
+`az acr create -g aks-rg -n cloudorbit --sku Standard`
 
 **Create Azure Pipelines**<br>
 Follow the steps in the blog to create and setup Azure Pipeline via Azure DevOps console<br>
@@ -20,7 +20,7 @@ Follow the steps in the blog to create and setup Azure Pipeline via Azure DevOps
 Once all done, we need to check the running pod, services and horizontal pod autoscaler<br>
 
 **Authenticate your k8s cluster with cloud-shell**<br>
-`az aks get-credentials -g cloudorbit-resource-grp -n cloudobrit-cluster`
+`az aks get-credentials -g aks-rg -n myAKSCluster`
 
 **Get deployments**<br>
 `kubectl -n dev get deployments`
@@ -48,7 +48,7 @@ Once all done, we need to check the running pod, services and horizontal pod aut
 `kubectl -n dev get deployment python-app`
 
 **For interactive UI console of k8s cluster**<br>
-`az aks browse -g cloudorbit-resource-grp -n cloudorbit-cluster`
+`az aks browse -g aks-rg -n myAKSCluster`
 
 **For entering into pods**<br>
 `kubectl -n dev exec -it [pod-name] -- /bin/bash`
