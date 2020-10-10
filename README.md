@@ -5,13 +5,13 @@ This repo is used to Trace an Application Deployed with Azure Kubernetes Service
 ### Steps
 
 **Create a resource group in Azure Subscription**<br>
-`az group create -l southcentralus -n aks-rg `
+`az group create -l eastus -n aks-rg`
 
 **Create Azure k8s cluster**<br>
 `az aks create -g aks-rg -n myAKSCluster --node-vm-size Standard_B2s --node-count 1 --generate-ssh-keys`
 
 **Create Azure Container Registry**<br>
-`az acr create -g aks-rg -n cloudorbit --sku Standard`
+`az acr create -g aks-rg -n youruniquename --sku Standard`
 
 **Create Azure Pipelines**<br>
 Follow the steps in the blog to create and setup Azure Pipeline via Azure DevOps console<br>
