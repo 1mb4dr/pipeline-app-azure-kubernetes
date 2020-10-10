@@ -14,9 +14,7 @@ This repo is used to Trace an Application Deployed with Azure Kubernetes Service
 `az acr create -g aks-rg -n youruniquename --sku Standard`
 
 **Create Azure Pipelines**<br>
-Follow the steps in the blog to create and setup Azure Pipeline via Azure DevOps console<br>
-
-Once all done, we need to check the running pod, services and horizontal pod autoscaler<br>
+Here you need to create an organization in Azure DevOps and link your Github<br>
 
 **Authenticate your k8s cluster with cloud-shell**<br>
 `az aks get-credentials -g aks-rg -n myAKSCluster`
