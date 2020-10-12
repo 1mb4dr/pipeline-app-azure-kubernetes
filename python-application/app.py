@@ -2,7 +2,7 @@ from flask import Flask
 import epsagon
 
 epsagon.init(
-    token='f41b1713-e48b-4685-a88b-34db5b3b0c55',
+    token='set your token here',
     app_name='pipeline-azure-aks',
     metadata_only=False
 )
